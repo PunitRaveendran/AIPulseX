@@ -211,10 +211,3 @@ if st.button("🎇 Unveil the Destiny!"):
         st.error(f"⚠️ Oops! Magic failed: {str(e)} ⚠️\nCheck the spellbook (features) for errors!")
         st.write("Input features shape:", features.shape)
         st.write("Feature names:", ", ".join(features.columns))
-
-@app.route("/predict", methods=["GET"])
-def predict():
-    values = [float(x) for x in request.form.values()]
-    pred = model.predict(np.array(values))
-    return pred
-
